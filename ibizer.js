@@ -13,7 +13,7 @@ var textOutput = document.getElementById('textoutput');
 var improvementOutput = document.getElementById('improvement');
 
 textInput.addEventListener("keydown", function(){stateText.innerText = stateStrings[2]});
-slider.addEventListener("change", function(){ makeString(); document.getElementById('slider').innerText = slider.value;});
+slider.addEventListener("change", function(){ makeString(); document.getElementById('slider').innerHTML = slider.value;});
 function debounce(callback, wait) {
   let timeout;
   return (...args) => {
