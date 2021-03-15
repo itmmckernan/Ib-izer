@@ -48,7 +48,7 @@ function makeString(){
 async function stringParse(string){
 	if(typeof string != "string")
 		return string;
-	if(slider.value > Math.random()*100)
+	if(slider.value < Math.random()*100)
 		return string;
 	if(top100.includes(string.toLowerCase()))
 		return string;
