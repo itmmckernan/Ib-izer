@@ -8,6 +8,8 @@ var improvementString = "\"Improved the text\" by "
 
 var stateText = document.getElementById('stateText');
 var slider = document.getElementById('percentageWords');
+var numberSlider = document.getElementById('loopTimes');
+
 var textInput = document.getElementById('textinput');
 var textOutput = document.getElementById('textoutput');
 var improvementOutput = document.getElementById('improvement');
