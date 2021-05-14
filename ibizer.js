@@ -35,7 +35,7 @@ function makeString(){
 	for(var i = 0; i < numberSlider.value; i++){
 		split = betterString(split);
 	}
-	outputString = split;
+	let outputString = split;
 	textOutput.value = outputString;
 	stateText.innerText = stateStrings[0];
 	improvementOutput.innerText = improvementString + Math.round((( outputString.length - textInput.value.length) / textInput.value.length)*100)/100+"%";
@@ -44,6 +44,7 @@ function makeString(){
 
 function betterString(split){
 	var promiseList = [];
+	var outputString = "";
 	for(var i = 0; i < split.length; i++){
 		promiseList[i] = stringParse(split[i]); 
 	}
