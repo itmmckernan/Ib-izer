@@ -39,7 +39,7 @@ function makeString(){
 	textOutput.value = outputString;
 	stateText.innerText = stateStrings[0];
 	improvementOutput.innerText = improvementString + Math.round((( outputString.length - textInput.value.length) / textInput.value.length)*100)/100+"%";
-});
+
 }
 
 function betterString(split){
@@ -52,6 +52,7 @@ function betterString(split){
 		for(var i = 0; i < values.length; i++){
 			outputString += values[i]+" ";
 		}
+		});
 	return outputString;
 }
 async function stringParse(string){
