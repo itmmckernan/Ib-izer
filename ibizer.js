@@ -30,6 +30,17 @@ window.addEventListener('keyup', debounce( () => {
 function makeString(){
     stateText.innerText = stateStrings[1];
 	var split = textInput.value.split(' ');
+	for(var i = 0; i < numberSlider.value; i++){
+		split = betterString(split);
+	}
+	outputString = split;
+	textOutput.value = outputString;
+	stateText.innerText = stateStrings[0];
+	improvementOutput.innerText = improvementString + Math.round((( outputString.length - textInput.value.length) / textInput.value.length)*100)/100+"%";
+});
+}
+
+function betterString(split){
 	var promiseList = [];
 	for(var i = 0; i < split.length; i++){
 		promiseList[i] = stringParse(split[i]); 
@@ -39,12 +50,8 @@ function makeString(){
 		for(var i = 0; i < values.length; i++){
 			outputString += values[i]+" ";
 		}
-		textOutput.value = outputString;
-		stateText.innerText = stateStrings[0];
-		improvementOutput.innerText = improvementString + Math.round((( outputString.length - textInput.value.length) / textInput.value.length)*100)/100+"%";
-});
+	return outputString;
 }
-
 async function stringParse(string){
 	if(typeof string != "string")
 		return string;
