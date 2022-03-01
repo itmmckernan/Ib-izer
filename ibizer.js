@@ -29,11 +29,11 @@ window.addEventListener('keyup', debounce( () => {
 	makeString()
 }, 2000));
 
-function makeString(){
+async function makeString(){
     stateText.innerText = stateStrings[1];
 	var split = textInput.value.split(' ');
 	for(var i = 0; i < numberSlider.value; i++){
-		split = betterString(split);
+		split = await betterString(split);
 	}
 	let outputString = split;
 	textOutput.value = outputString;
@@ -42,7 +42,7 @@ function makeString(){
 
 }
 
-function betterString(split){
+async function betterString(split){
 	var promiseList = [];
 	var outputString = "";
 	for(var i = 0; i < split.length; i++){
