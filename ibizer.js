@@ -48,7 +48,7 @@ function betterString(split){
 	for(var i = 0; i < split.length; i++){
 		promiseList[i] = stringParse(split[i]); 
 	}
-	Promise.all(promiseList).then((values) => {
+	await Promise.all(promiseList).then((values) => {
 		outputString = "";
 		for(var i = 0; i < values.length; i++){
 			outputString += values[i]+" ";
